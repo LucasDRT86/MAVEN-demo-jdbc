@@ -1,0 +1,13 @@
+package fr.diginamic.jdbc;
+
+import fr.diginamic.jdbc.dao.FournisseurDaoJdbc;
+
+public class TestDaoJdbc {
+
+	public static void main(String[] args) {
+		FournisseurDaoJdbc fournisseur = new FournisseurDaoJdbc();
+		
+		fournisseur.extraire();
+	}
+
+}

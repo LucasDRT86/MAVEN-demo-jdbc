@@ -1,0 +1,43 @@
+package fr.diginamic.jdbc.dao;
+
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import fr.diginamic.jdbc.entites.Fournisseur;
+
+public class FournisseurDaoJdbc implements FournisseurDao {
+
+	@Override
+	public List<Fournisseur> extraire() {
+		
+		List<Fournisseur> fournisseur = new ArrayList<>();
+		ResultSet res = stat.executeQuery("SELECT id, nom FROM fournisseur");
+		
+		while(res.next()) {
+			Fournisseur newFournisseur = new Fournisseur(res.getInt("id"),res.getString("nom"));
+			fournisseur.add(newFournisseur);
+		}
+		
+		return fournisseur;
+	}
+
+	@Override
+	public void insert(Fournisseur fournisseur) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public int update(String ancienNom, String nouveauNom) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean delete(Fournisseur fournisseur) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}
