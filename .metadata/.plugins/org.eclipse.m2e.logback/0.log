@@ -1,0 +1,26 @@
+2024-05-30 10:24:51,726 [Worker-8: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2024-05-30 10:26:13,823 [Worker-6: Creating project "demo-jdbc"] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: fr.diginamic:demo-jdbc:0.0.1-SNAPSHOT @ C:\Users\lucas\OneDrive\Documents\Cours\CDA\JAVA\TP\JAVAjdbc\demo-jdbc\pom.xml.
+2024-05-30 10:26:14,950 [Worker-6: Creating project "demo-jdbc"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /demo-jdbc/src/main/java
+2024-05-30 10:26:14,953 [Worker-6: Creating project "demo-jdbc"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /demo-jdbc/src/main/resources
+2024-05-30 10:26:14,954 [Worker-6: Creating project "demo-jdbc"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /demo-jdbc/src/test/java
+2024-05-30 10:26:14,955 [Worker-6: Creating project "demo-jdbc"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /demo-jdbc/src/test/resources
+2024-05-30 10:26:15,538 [Worker-1: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-05-30 10:26:15,543 [Worker-1: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-05-30 10:26:15,547 [Worker-1: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-05-30 10:26:15,548 [Worker-1: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2024-05-30 10:26:45,644 [Worker-2: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: fr.diginamic:demo-jdbc:0.0.1-SNAPSHOT @ C:\Users\lucas\OneDrive\Documents\Cours\CDA\JAVA\TP\JAVAjdbc\demo-jdbc\pom.xml.
+2024-05-30 10:26:45,752 [Worker-2: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-05-30 10:26:45,755 [Worker-2: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-05-30 10:26:45,759 [Worker-2: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-05-30 10:26:45,760 [Worker-2: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2024-05-30 10:26:55,101 [Worker-7: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2024-05-30 10:26:55,223 [Worker-7: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: fr.diginamic:demo-jdbc:0.0.1-SNAPSHOT @ C:\Users\lucas\OneDrive\Documents\Cours\CDA\JAVA\TP\JAVAjdbc\demo-jdbc\pom.xml.
+2024-05-30 10:26:55,295 [Worker-7: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /demo-jdbc/src/main/java
+2024-05-30 10:26:55,296 [Worker-7: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /demo-jdbc/src/main/resources
+2024-05-30 10:26:55,297 [Worker-7: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /demo-jdbc/src/test/java
+2024-05-30 10:26:55,297 [Worker-7: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /demo-jdbc/src/test/resources
+2024-05-30 10:26:55,417 [Worker-7: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0,00 sec, refresh facades takes 0,00 sec, update config takes 0,00 sec 
+2024-05-30 10:26:55,532 [Worker-9: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-05-30 10:26:55,532 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-05-30 10:26:55,535 [Worker-9: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-05-30 10:26:55,536 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
