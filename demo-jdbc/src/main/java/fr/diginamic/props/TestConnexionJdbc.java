@@ -3,6 +3,7 @@ package fr.diginamic.props;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 
 
@@ -17,10 +18,17 @@ public class TestConnexionJdbc {
 		String user = config.getString("database.user");
 		String password = config.getString("database.password");
 		
+		System.out.println(url);
+		
 		try {
 			DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());	
 			Connection maConnection = DriverManager.getConnection(url, user, password);
 			
+			Statement stat = maConnection.createStatement();
+			int nb = stat.executeUpdate("INSERT INTO fournisseur (ID, NOM) VALUES (4, 'Castorama');");
+			System.out.println(nb);
+			
+			stat.close();
 			maConnection.close();
 		}catch(SQLException e) {
 			e.printStackTrace();
