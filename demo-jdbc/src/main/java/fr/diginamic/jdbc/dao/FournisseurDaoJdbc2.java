@@ -1,0 +1,142 @@
+package fr.diginamic.jdbc.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+
+import fr.diginamic.jdbc.entites.Fournisseur;
+
+public class FournisseurDaoJdbc2 implements FournisseurDao {
+	@Override
+	public List<Fournisseur> extraire() {
+		
+		ResourceBundle config = ResourceBundle.getBundle("database");
+		String url = config.getString("database.url");
+		String user = config.getString("database.user");
+		String password = config.getString("database.password");
+		
+		System.out.println(url);
+		
+		try {
+			DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());	
+			Connection maConnection = DriverManager.getConnection(url, user, password);
+			
+			String query = "SELECT id, nom FROM fournisseur";
+			PreparedStatement stat = maConnection.prepareStatement(query);
+			ResultSet res = stat.executeQuery();
+			System.out.println(res);
+			
+			ArrayList<Fournisseur> fournisseur = new ArrayList<>();
+			
+			while(res.next()) {
+				Fournisseur newFournisseur = new Fournisseur(res.getInt("id"),res.getString("nom"));
+				fournisseur.add(newFournisseur);
+			}
+			
+			for(Fournisseur f : fournisseur) {
+				System.out.println(f.getId() + " - " + f.getNom());
+			}
+			
+			stat.close();
+			maConnection.close();
+
+			return fournisseur;
+		}catch(SQLException e) {
+			e.printStackTrace();
+			System.err.println(e.getMessage());
+			System.exit(-1);
+			return null;
+		}
+	}
+
+	@Override
+	public void insert(Fournisseur fournisseur) {
+		ResourceBundle config = ResourceBundle.getBundle("database");
+		String url = config.getString("database.url");
+		String user = config.getString("database.user");
+		String password = config.getString("database.password");
+		
+		System.out.println(url);
+		
+		try {
+			DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());	
+			Connection maConnection = DriverManager.getConnection(url, user, password);
+			
+			Statement stat = maConnection.createStatement();
+			int nb = stat.executeUpdate("INSERT INTO fournisseur (ID, NOM) VALUES ("+ fournisseur.getId() +", '"+fournisseur.getNom()+"');");
+			System.out.println(nb);
+			
+			stat.close();
+			maConnection.close();
+		}catch(SQLException e) {
+			e.printStackTrace();
+			System.err.println(e.getMessage());
+			System.exit(-1);
+		}
+
+	}
+
+	@Override
+	public int update(String ancienNom, String nouveauNom) {
+		ResourceBundle config = ResourceBundle.getBundle("database");
+		String url = config.getString("database.url");
+		String user = config.getString("database.user");
+		String password = config.getString("database.password");
+		
+		System.out.println(url);
+		
+		try {
+			DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());	
+			Connection maConnection = DriverManager.getConnection(url, user, password);
+			
+			Statement stat = maConnection.createStatement();
+			int nb = stat.executeUpdate("UPDATE fournisseur SET fournisseur.Nom = '"+nouveauNom+"' WHERE fournisseur.Nom ='"+ancienNom+"'");
+			System.out.println(nb);
+			
+			stat.close();
+			maConnection.close();
+			return nb;
+		}catch(SQLException e) {
+			e.printStackTrace();
+			System.err.println(e.getMessage());
+			System.exit(-1);
+			return 0;
+		}
+		
+	}
+
+	@Override
+	public boolean delete(Fournisseur fournisseur) {
+		ResourceBundle config = ResourceBundle.getBundle("database");
+		String url = config.getString("database.url");
+		String user = config.getString("database.user");
+		String password = config.getString("database.password");
+		
+		System.out.println(url);
+		
+		try {
+			DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());	
+			Connection maConnection = DriverManager.getConnection(url, user, password);
+			
+			Statement stat = maConnection.createStatement();
+			int nb = stat.executeUpdate("DELETE FROM fournisseur WHERE fournisseur.id ="+fournisseur.getId());
+			System.out.println(nb);
+			
+			stat.close();
+			maConnection.close();
+			
+			return true;
+		}catch(SQLException e) {
+			e.printStackTrace();
+			System.err.println(e.getMessage());
+			System.exit(-1);
+			return false;
+		}
+	}
+}
